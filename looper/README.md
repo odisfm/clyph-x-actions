@@ -10,8 +10,8 @@ All exposed functions are available for use in ClyphX Pro, with some caveats:
 
 * didn't implement `export_to_clip_slot`, I may later
 * functions named with underscores like `half_length` should be called with no underscores (all one word)
-* `overdub_after_record` is called like `USER_DEV LPR DUBAFTER <MODE>` (where \<MODE> is `ON`, `OFF`, or omitted to toggle the state)
-* the record length is called like `USER_DEV LPR BARS <LENGTH>` (where \<LENGTH> is any number of bars available in the UI, as well as 'X')
+* `overdub_after_record` is called like `USER_DEV LPR DUBAFTER <MODE>` (where `<MODE>` is `ON`, `OFF`, or omitted to toggle the state)
+* the record length is called like `USER_DEV LPR BARS <LENGTH>` (where `<LENGTH>` is any number of bars available in the UI, as well as 'X')
 
 ### Available functions
 
@@ -25,5 +25,5 @@ All exposed functions are available for use in ClyphX Pro, with some caveats:
 * `USER_DEV LPR PLAY`
 * `USER_DEV LPR STOP`
 * `USER_DEV LPR UNDO`
-* `USER_DEV LPR BARS <LENGTH>` (sets the record length, where \<LENGTH> is any number of bars available in the UI, as well as 'X')
-* `USER_DEV LPR DUBAFTER <MODE>` (where \<MODE> is `ON`, `OFF`, or omitted to toggle the state)
+* `USER_DEV LPR BARS <LENGTH>` (sets the record length, where `<LENGTH>` is any number of bars available in the UI, as well as `X`)
+* `USER_DEV LPR DUBAFTER <MODE>` (where `<MODE>` is `ON`, `OFF`, or omitted to toggle the state)
