@@ -2,7 +2,7 @@
 
 Device action that exposes functions for the Looper device that were added to the Live API in version 12.0.5.
 
-Syntax is `USER_DEV LPR <specific function>`
+Usage: `USER_DEV LPR <specific function>`
 
 The functions available are listed in [the Live Object Model documentation](https://docs.cycling74.com/max8/vignettes/live_object_model#live_obj_anchor_LooperDevice) under LooperDevice.
 
