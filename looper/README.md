@@ -1,6 +1,6 @@
 # looper
 
-Exposes actions for the Looper device that were added to the Live API in version 12.0.5.
+Device action that exposes functions for the Looper device that were added to the Live API in version 12.0.5.
 
 Syntax is `USER_DEV LPR <specific function>`
 
