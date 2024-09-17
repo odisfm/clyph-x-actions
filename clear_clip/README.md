@@ -12,13 +12,13 @@ As with all user clip actions, it must be called as below:
 
 `"bass gtr" / USER_CLIP CLEARCLIP` (playing clip or selected clip on track called "bass gtr")
 
-Also includes a helper action, `CLEARCLIPPROMPT`. This does nothing but indicate what the man action will do when triggered by displaying a message in the Live UI and on a Push 1 or 2†. Useful if using G-Controls.
+Also includes a helper action, `CLEARCLIPPROMPT`. This does nothing but indicate what the main action will do when triggered by displaying a message in the Live UI and on a Push 1 or 2†. Useful if using G-Controls.
 
 Here's an example G-Control definition:
 
 ```
 MY_BUTTON = NOTE, 1, 36, 127, 0, FALSE
-MY_BUTTON RELEASED_IMMEDIATELY = USER_CLIP CLEARCLIPPROMPT
+MY_BUTTON RELEASED_IMMEDIATELY = USER_CLIP(SEL) CLEARCLIPPROMPT
 MY_BUTTON PRESSED_DELAYED = USER_CLIP(SEL) CLEARCLIP
 ```
 
