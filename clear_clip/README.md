@@ -1,4 +1,4 @@
-# clear_clip
+# clearclip
 
 Clip action that deletes the targeted clip, only if it's not playing. Will delete a playing clip if called with argument `FORCE`.
 
