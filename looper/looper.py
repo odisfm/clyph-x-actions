@@ -9,7 +9,7 @@ class looper(UserActionsBase):
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
-        self.logging_level = 'all'
+        self.logging_level = 'critical'
     
     def log(self, message, critical = False):
         if self.logging_level != 'all' and critical == False:
