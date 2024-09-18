@@ -1,3 +1,6 @@
+# made by odis :)
+# https://github.com/odisfm/clyph-x-actions
+
 from ClyphX_Pro.clyphx_pro.UserActionsBase import UserActionsBase
 
 FIRST_SCENE = None
