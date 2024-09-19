@@ -22,7 +22,7 @@ Calling on a recording clip will have different behaviour based on whether it is
 
 _The following example assumes a default value of `8` bars._
 
-As the clip loop braces can't be changed on a still-recording clip, a callback will be registered when the recording is complete. If you trigger `USER_CLIP HALVE <` before bar 5 of the recording, the clip will be re-triggered (while still recording), and shortly after firing, the clip will be halved<sup>2</sup>. __This will happen according to your set's global quantization value, meaning it only really works properly if that is set to 4 bars. (if you triggered the action between the start of bar 3 and end of bar 4, a GQ of 2 bars would work).__
+As the clip loop braces can't be changed on a still-recording clip, a callback will be registered when the recording is complete. If you trigger `USER_CLIP HALVE <` before bar 5 of the recording, the clip will be re-triggered (while still recording), and shortly after firing, the clip will be halved<sup>2, 3</sup>. __This will happen according to your set's global quantization value, meaning it only really works properly if that is set to 4 bars. (if you triggered the action between the start of bar 3 and end of bar 4, a GQ of 2 bars would work).__
 
 
 This slight delay means that calling `USER_CLIP HALVE >` on a recording clip will result in you hearing a short portion (~100ms <sup>3</sup>) of the first half of your clip before the second half starts playing. This is particularly noticeable if the first and second halves of the clip start on different pitches. The clip will, however, remain in time.
