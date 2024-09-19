@@ -98,7 +98,7 @@ class safe_launch(UserActionsBase):
             self.log(f'checking track {track.name}')
             if track.name == first_track:
                 started = True
-            if started == False:
+            if not started:
                 continue
             if track.clip_slots[scene_index].has_clip:
                 scene_has_clip = True
