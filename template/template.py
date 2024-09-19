@@ -1,6 +1,8 @@
 from ClyphX_Pro.clyphx_pro.UserActionsBase import UserActionsBase
 
-# change the class name! 
+LOGGING_LEVEL = 'all'
+
+# change the class name!
 class template(UserActionsBase):
 
     ### boilerplate
@@ -10,7 +12,7 @@ class template(UserActionsBase):
         self.logging_level = 'all'
     
     def log(self, message, critical = False):
-        if self.logging_level != 'all' and critical == False:
+        if LOGGING_LEVEL is not 'all' and not critical:
             return
         if critical:
             message = 'CRITICAL: ' + message

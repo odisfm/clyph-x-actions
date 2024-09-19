@@ -21,7 +21,7 @@ Output: `MYCOOLACTION: firing clip on scene 3`
 
 When coding a user action, you may require many log messages for debug purposes. When the action is complete, these become unnecessary, but there are certain errors you always want to log.
 
-In the `__init__` method of the template is a line `self.logging_level = 'all'`. Changing this to `self.logging_level = 'critical'` will suppress all log messages not passed like this: `self.log(f'track not found!', critical=True)`. You don't need to pass any argument for non-critical messages.
+Near the top of the template is a line `LOGGING_LEVEL = 'all'`. Changing this to `LOGGING_LEVEL = 'critical'` will suppress all log messages not passed like this: `self.log(f'track not found!', critical=True)`. You don't need to pass any argument for non-critical messages.
 
 Messages logged like this will also be prepended with `CRITICAL:`. This allows you to make a rule in your log viewer to highlight them.
 
