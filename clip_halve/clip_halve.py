@@ -124,7 +124,7 @@ class clip_halve(UserActionsBase):
     def recording_callback(self, target, args):
         self.log('callback firing')
         if target.is_audio_clip and target.is_recording:
-            self.log('audio clip stil recording, returning')
+            self.log('audio clip still recording, returning')
             return
         clip_slot = target.canonical_parent
         track = clip_slot.canonical_parent
