@@ -41,7 +41,12 @@ class template(UserActionsBase):
         else:
             self.cxp_action(f'PUSH MSG "{self.__class__.__name__.upper()}: {message}"')
 
-    ### end boilerplate
+    def shout(self, message, critical=True, class_label=False):
+        self.log(message, critical)
+        self.msg(message)
+        self.pushmsg(message, class_label)
+
+##### end boilerplate
 
     def create_actions(self):
         self.add_global_action('template', self.template)
