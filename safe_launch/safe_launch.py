@@ -69,8 +69,7 @@ class safe_launch(UserActionsBase):
             scene_index = self.get_selected_scene_index()
         else:
             try:
-                args = int(args)
-                scene_index = args - 1
+                scene_index = int(arg_scene) - 1
             except:
                 self.log('must specify scene number as integer!', critical=True)
                 return
