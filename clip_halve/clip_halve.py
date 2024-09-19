@@ -4,6 +4,7 @@
 from ClyphX_Pro.clyphx_pro.UserActionsBase import UserActionsBase
 
 DEFAULT_CLIP_LENGTH_BARS = 8
+CALLBACK_WAIT_TIME = 1      # in hundreds of milliseconds, try increasing if the callback isn't always working properly
 
 class clip_halve(UserActionsBase):
     
@@ -129,7 +130,7 @@ class clip_halve(UserActionsBase):
         clip_slot = target.canonical_parent
         track = clip_slot.canonical_parent
         clip_index = list(track.clip_slots).index(clip_slot)
-        self.cxp_action(f'WAIT 2; "{track.name}" / USER_CLIP({clip_index + 1}) HALVE {args}')
+        self.cxp_action(f'WAIT {CALLBACK_WAIT_TIME}; "{track.name}" / USER_CLIP({clip_index + 1}) HALVE {args}')
         self.log(f'callback finished')
         return
 
