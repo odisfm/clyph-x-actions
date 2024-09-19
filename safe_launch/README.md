@@ -21,4 +21,8 @@ Near the top are the variables `FIRST_TRACK` and `LAST TRACK`, set to `None` by 
 
 You can set the first or the first __and__ last tracks to consider when calling the action like `SCENELAUNCH SEL "drums" "keys"`. Double-quotes are mandatory (specifying tracks by number is not supported). Only specifying the first track will leave the last track as the value defined in __safe_launch.py__.
 
+### select scene after launching
+The flag `SELECT_AFTER_LAUNCHING` near the top of __safe_launch.py__ can be set to `True` to select a successfully launched scene. Redundant if you have 'Select On Launch' enabled in Live's preferences.
+#
+
 <sup>1</sup> Shows an error in the Live UI, in the log, and on a connected Push 1 or Push 2. Push 2 in Live 12+ only supported if used with the legacy control surface script.

@@ -6,6 +6,8 @@ from ClyphX_Pro.clyphx_pro.UserActionsBase import UserActionsBase
 FIRST_TRACK = None
 LAST_TRACK = None
 
+SELECT_AFTER_LAUNCH = False
+
 class safe_launch(UserActionsBase):
 
     ### boilerplate
@@ -110,4 +112,5 @@ class safe_launch(UserActionsBase):
             return
         else:
             self._song.scenes[scene_index].fire()
-            self._song.view.selected_scene = self._song.scenes[scene_index]
+            if SELECT_AFTER_LAUNCH:
+                self._song.view.selected_scene = self._song.scenes[scene_index]
