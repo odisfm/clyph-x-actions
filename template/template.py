@@ -5,12 +5,11 @@ LOGGING_LEVEL = 'all'
 # change the class name!
 class template(UserActionsBase):
 
-    ### boilerplate
+##### boilerplate
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
-        self.logging_level = 'all'
-    
+
     def log(self, message, critical = False):
         if LOGGING_LEVEL is not 'all' and not critical:
             return
@@ -26,12 +25,9 @@ class template(UserActionsBase):
 
         ### extras
 
-    def get_selected_track(self):
-        return self._song.view.selected_track
-
     def get_selected_scene_index(self):
         return list(self._song.scenes).index(self._song.view.selected_scene)
-    
+
     def get_track_by_name(self, search_name):
         for track in list(self._song.tracks):
             if track.name == search_name:
@@ -52,6 +48,6 @@ class template(UserActionsBase):
         #self.add_track_action('template', self.template)
         #self.add_clip_action('template', self.template)
         #self.add_device_action('template', self.template)
-       
+
     def template(self, action_def, args):
         pass
