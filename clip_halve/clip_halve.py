@@ -4,7 +4,7 @@
 from ClyphX_Pro.clyphx_pro.UserActionsBase import UserActionsBase
 
 DEFAULT_CLIP_LENGTH_BARS = 8
-CALLBACK_WAIT_TIME = 1      # in hundreds of milliseconds, try increasing if the callback isn't always working properly
+CALLBACK_WAIT_TIME = 2      # in hundreds of milliseconds, try increasing if the callback isn't always working properly
 
 class clip_halve(UserActionsBase):
 
