@@ -70,8 +70,12 @@ class safe_launch(UserActionsBase):
         else:
             try:
                 scene_index = int(arg_scene) - 1
+                if scene_index >= len(list(self._song.scenes)) or scene_index <= 0:
+                    message = f'scene {scene_index + 1} does not exist!'
+                    self.shout(message)
+                    return
             except:
-                self.log('must specify scene number as integer!', critical=True)
+                self.log('must specify scene number, \'NEXT\', or \'SEL\'!', critical=True)
                 return
 
         first_track = FIRST_TRACK
