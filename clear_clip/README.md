@@ -4,6 +4,8 @@ Clip action that deletes the targeted clip, only if it's not playing. Will delet
 
 By default targets the playing clip on the selected track, but functions just like a native clip action in that it can be applied to specific tracks, specific clips, or ranges. (See ClyphX Pro User Manual).
 
+## usage
+
 As with all user clip actions, it must be called as below:
 
 `USER_CLIP CLEARCLIP`
