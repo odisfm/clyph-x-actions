@@ -3,7 +3,6 @@
 
 from ClyphX_Pro.clyphx_pro.UserActionsBase import UserActionsBase
 
-# change the class name! 
 class push_write(UserActionsBase):
 
     ### boilerplate
