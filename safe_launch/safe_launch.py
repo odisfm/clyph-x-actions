@@ -8,6 +8,7 @@ LAST_TRACK = None
 
 SELECT_AFTER_LAUNCH = False
 
+
 class safe_launch(UserActionsBase):
 
     ### boilerplate
