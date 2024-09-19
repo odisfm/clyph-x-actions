@@ -12,7 +12,7 @@ Applies to the playing (or recording), clip on the targeted track. Applies to th
 
 ### `reset`
 
-The Live API does not provide a practical way to determine the original length of a recorded clip. Calling `USER_CLIP HALVE_RESET` will set the clip's Loop Start to 1.1.1 and the Loop End to a default value of 9.1.1 (8 bars long).
+The Live API does not provide a practical way to determine the original length of a recorded clip. Calling `USER_CLIP HALVE RESET` will set the clip's Loop Start to 1.1.1 and the Loop End to a default value of 9.1.1 (8 bars long).
 
 The default value can be changed by setting the variable at the top of the file:
 
