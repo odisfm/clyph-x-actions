@@ -7,7 +7,7 @@ DEFAULT_CLIP_LENGTH_BARS = 8
 CALLBACK_WAIT_TIME = 1      # in hundreds of milliseconds, try increasing if the callback isn't always working properly
 
 class clip_halve(UserActionsBase):
-    
+
     ### boilerplate
 
     def __init__(self, *a, **k):
@@ -17,7 +17,7 @@ class clip_halve(UserActionsBase):
 
     def get_selected_scene_index(self):
         return list(self._song.scenes).index(self._song.view.selected_scene)
-    
+
     def log(self, message, critical = False):
         if self.logging_level != 'all' and critical == False:
             return
@@ -65,9 +65,7 @@ class clip_halve(UserActionsBase):
                 })
                 target.add_is_overdubbing_listener(callback)
                 target.add_is_recording_listener(callback)
-                #target.canonical_parent.fire()
-                
-                
+
             elif target.is_midi_clip and args == "<":
                 target.canonical_parent.fire()
                 return
@@ -100,14 +98,13 @@ class clip_halve(UserActionsBase):
         else:
             self.log('argument provided must be "<" or ">"', critical=True)
             return
-        
+
         self.log(f'NEW start_marker {target.start_marker} end_marker {target.end_marker}')
 
         if target.is_midi_clip:
             self.log(f'checking for callback')
             self.log(self.midi_clips_listeners)
             for i in range(len(self.midi_clips_listeners) + 1):
-                self.log(f'i = {i}')
                 if i == len(self.midi_clips_listeners):
                     self.log('could not find listener')
                     break
@@ -119,9 +116,9 @@ class clip_halve(UserActionsBase):
                     self.midi_clips_listeners.pop(i)
                     self.log('removed listener')
                     break
-            
+
         self.log('finished')
-        
+
     def recording_callback(self, target, args):
         self.log('callback firing')
         if target.is_audio_clip and target.is_recording:
@@ -133,7 +130,3 @@ class clip_halve(UserActionsBase):
         self.cxp_action(f'WAIT {CALLBACK_WAIT_TIME}; "{track.name}" / USER_CLIP({clip_index + 1}) HALVE {args}')
         self.log(f'callback finished')
         return
-
-
-
-        
