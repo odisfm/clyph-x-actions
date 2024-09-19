@@ -2,7 +2,9 @@
 
 Clip action that takes an existing (or recording<sup>1</sup>) clip and changes the loop markers so that only the left or right half plays. Can be used repeatedly.
 
-Usage: `USER_CLIP HALVE` `<` or `>` or `RESET` (see below)
+Usage: `USER_CLIP HALVE` `<` or `>` or `RESET` (see below).
+
+Applies to the playing (or recording), clip on the targeted track. Applies to the selected clip if none is playing. Applies to the selected track if none specified. Can be applied to specific clips with `USER_CLIP(<scene number of clip>) HALVE`.
 
 ### reset
 
