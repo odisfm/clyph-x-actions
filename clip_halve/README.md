@@ -2,11 +2,11 @@
 
 Clip action that takes an existing (or recording<sup>†</sup>) clip and changes the loop markers so that only the left or right half plays. Can be used repeatedly.
 
+__The results of this action are only audible according to the clip update rate set in Preferences > Record, Warp & Launch. Recommended setting is 1/16 or 1/32.__
+
 ## usage
 
 #### `USER_CLIP HALVE` `<` or `>` or `RESET` (see below).
-
-__The results of this action are only audible according to the clip update rate set in Preferences > Record, Warp & Launch. Recommended setting is 1/16 or 1/32.__
 
 Applies to the playing (or recording), clip on the targeted track. Applies to the selected clip if none is playing. Applies to the selected track if none specified. Can be applied to specific clips with `USER_CLIP(<scene number of clip>) HALVE`.
 
