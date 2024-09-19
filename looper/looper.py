@@ -21,6 +21,30 @@ class looper(UserActionsBase):
     def msg(self, message):
         self.canonical_parent.show_message(f'{self.__class__.__name__.upper()}: {message}')
 
+    def get_selected_track(self):
+        return self._song.view.selected_track
+
+    def get_selected_scene_index(self):
+        return list(self._song.scenes).index(self._song.view.selected_scene)
+
+    def get_track_by_name(self, search_name):
+        for track in list(self._song.tracks):
+            if track.name == search_name:
+                return track
+        self.log('no track matching search term!', critical=True)
+        return False
+
+    def pushmsg(self, message, class_label = False):
+        if not class_label:
+            self.cxp_action(f'PUSH MSG "{message}"')
+        else:
+            self.cxp_action(f'PUSH MSG "{self.__class__.__name__.upper()}: {message}"')
+
+    def shout(self, message, critical = False, class_label = False):
+        self.log(message, critical)
+        self.msg(message)
+        self.pushmsg(message, class_label)
+
     ### end boilerplate
 
     def create_actions(self):
