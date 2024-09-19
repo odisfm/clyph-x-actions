@@ -10,7 +10,7 @@ class looper(UserActionsBase):
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
         self.logging_level = 'critical'
-    
+
     def log(self, message, critical = False):
         if self.logging_level != 'all' and critical == False:
             return
@@ -51,11 +51,6 @@ class looper(UserActionsBase):
         self.add_track_action('lpr', self.looper)
 
     def looper(self, action_def, args):
-        looper = action_def["device"]
-        if looper.class_name != 'Looper':
-            message = f'Targeted device is not a looper!'
-            self.msg(message)
-            self.log(message, critical=True)
         target = action_def["track"]
         looper_device = None
         device_list = list(target.devices)
@@ -67,28 +62,27 @@ class looper(UserActionsBase):
             message = f'No looper device on track {target.name}!'
             self.shout(message)
             return
-        
+
         if args == 'record':
-            looper.record()
+            looper_device.record()
         elif args == 'clear':
-            looper.clear()
+            looper_device.clear()
         elif args == 'doublespeed':
-            looper.double_speed()
+            looper_device.double_speed()
         elif args == 'halfspeed':
-            looper.half_speed()
+            looper_device.half_speed()
         elif args == 'halflength':
-            looper.half_length()
-        elif args == 'doublelength':
-            looper.double_length()
+            looper_device.half_length()
         elif args == 'overdub':
-            looper.overdub()
+            looper_device.overdub()
         elif args == 'play':
-            looper.play()
+            looper_device.play()
         elif args == 'stop':
-            looper.stop()
+            looper_device.stop()
         elif args == 'undo':
-            looper.undo()
+            looper_device.undo()
         else:
+            args_original = args
             args = args.split(' ')
 
             if args[0] == 'bars':
@@ -116,16 +110,13 @@ class looper(UserActionsBase):
                     self.msg(message)
                     self.log(message, critical=True)
                     return
- 
-                looper.record_length_index = record_length
+
+                looper_device.record_length_index = record_length
 
             elif args[0] == 'dubafter':
                 if len(args) == 1:
-                    looper.overdub_after_record = not looper.overdub_after_record
+                    looper_device.overdub_after_record = not looper_device.overdub_after_record
                 elif args[1] in ['on', 'true', '1']:
-                    looper.overdub_after_record = True
+                    looper_device.overdub_after_record = True
                 elif args[1] in ['off', 'false', '0']:
-                    looper.overdub_after_record = False
-
-        
-        
+                    looper_device.overdub_after_record = False
