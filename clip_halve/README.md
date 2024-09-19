@@ -24,7 +24,7 @@ Calling on a recording clip will have different behaviour based on whether it is
 
 _The following example assumes a default value of 8 bars._
 
-As the clip loop braces can't be changed on a still-recording clip, a callback will be registered when the recording is complete. If you trigger `USER_CLIP HALVE <` before bar 5 of the recording, the clip will be re-triggered* (while continuing to record), and immediately after launching, the clip will be halved<sup>2</sup>.
+As the clip loop braces can't be changed on a still-recording clip, a callback will be registered to execute when the recording is complete. If you trigger `USER_CLIP HALVE <` before bar 5 of the recording, the clip will be retriggered* (while continuing to record), and immediately after launching, the clip will be halved<sup>1</sup>. This behaviour doesn't apply to overdubbing MIDI clips, which are changed instantly.
 
 __*This will happen according to your set's global quantization value, meaning it only really works properly if that is set to 4 bars. (if you triggered the action between the start of bar 3 and end of bar 4, a GQ of 2 bars would work).__
 
@@ -32,8 +32,6 @@ Using `USER_CLIP HALVE >` in the second half of the recording _on an audio clip_
 
 The length of this delay is the Live Clip Update Rate + ~200ms <sup>3</sup>, you will hear the first half of your clip for this amount of time before the second half starts playing. This is particularly noticeable if the first and second halves of the clip start on different pitches. The clip will, however, remain in time. A Clip Update Rate of 1/16 or 1/32 is recommended for this reason.
 
-<sup>1</sup> When triggering a fixed-length MIDI recording from Ableton Push, Live actually pre-creates a clip according to the fixed-length setting. This means that calling `USER_CLIP HALVE >` in the first half of recording will produce undesired effects.
+<sup>1</sup> Often, this retriggering will mean the clip actually _doesn't_ need halving, but the action will determine that automatically. Note: When triggering a fixed-length record on a MIDI track via Ableton Push, Live creates a blank MIDI clip of your selected length and starts overdubbing it. This means the retriggering behaviour does not apply, and the action happens instantly. It also means that calling `USER_CLIP HALVE >` in the first half of recording will produce undesired effects.
 
-<sup>2</sup> Often, this re-triggering will mean the clip actually _doesn't_ need halving, but the action will determine that automatically.
-
-<sup>3</sup> If the callback is not working, or working unreliably, try increasing `CALLBACK_WAIT_TIME` near the top of the file. Works in increments of 100 milliseconds.
+<sup>2</sup> If the callback is not working, or working unreliably, try increasing `CALLBACK_WAIT_TIME` near the top of the file. Works in increments of 100 milliseconds.
