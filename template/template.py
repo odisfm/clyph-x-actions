@@ -25,6 +25,9 @@ class template(UserActionsBase):
 
         ### extras
 
+    def get_selected_track(self):
+        return self._song.view.selected_track
+
     def get_selected_scene_index(self):
         return list(self._song.scenes).index(self._song.view.selected_scene)
 
