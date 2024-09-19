@@ -48,14 +48,24 @@ class looper(UserActionsBase):
     ### end boilerplate
 
     def create_actions(self):
-        self.add_device_action('lpr', self.looper)
-       
+        self.add_track_action('lpr', self.looper)
+
     def looper(self, action_def, args):
         looper = action_def["device"]
         if looper.class_name != 'Looper':
             message = f'Targeted device is not a looper!'
             self.msg(message)
             self.log(message, critical=True)
+        target = action_def["track"]
+        looper_device = None
+        device_list = list(target.devices)
+        for device in device_list:
+            if device.class_name == 'Looper':
+                looper_device = device
+                break
+        if looper_device is None:
+            message = f'No looper device on track {target.name}!'
+            self.shout(message)
             return
         
         if args == 'record':
