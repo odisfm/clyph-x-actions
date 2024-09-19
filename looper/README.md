@@ -8,7 +8,7 @@ The functions available are listed in [the Live Object Model documentation](http
 
 All exposed functions are available for use in ClyphX Pro, with some caveats:
 
-* __didn't implement `export_to_clip_slot`__, I may later
+* __didn't implement `export_to_clip_slot`__, <del> I may later</del> not sure this is possible with ClyphX's implementation of the Live API
 * functions named with underscores like `half_length` should be called with no underscores (all one word)
 * `overdub_after_record` is called like `USER_DEV LPR DUBAFTER <MODE>` (where `<MODE>` is `ON`, `OFF`, or omitted to toggle the state)
 * the record length is called like `USER_DEV LPR BARS <LENGTH>` (where `<LENGTH>` is any number of bars available in the UI, as well as `X`)
