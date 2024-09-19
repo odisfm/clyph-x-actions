@@ -5,7 +5,7 @@ LOGGING_LEVEL = 'all'
 # change the class name!
 class template(UserActionsBase):
 
-##### boilerplate
+    ### boilerplate
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
@@ -44,12 +44,12 @@ class template(UserActionsBase):
         else:
             self.cxp_action(f'PUSH MSG "{self.__class__.__name__.upper()}: {message}"')
 
-    def shout(self, message, critical=True, class_label=False):
+    def shout(self, message, critical = False, class_label = False):
         self.log(message, critical)
         self.msg(message)
         self.pushmsg(message, class_label)
 
-##### end boilerplate
+    ### end boilerplate
 
     def create_actions(self):
         self.add_global_action('template', self.template)
