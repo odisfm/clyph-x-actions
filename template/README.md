@@ -37,14 +37,17 @@ The alias is much shorter:\
 ## Helper methods
 Several methods I often use with my actions:
 
-`get_selected_track()`\
+### `shout(message, critical=True)`
+Display your message in the Live UI, log.txt, and on a Push 1 or 2 (see `push_msg()` below). Default critical flag can be overridden.
+
+### `get_selected_track()`
 Returns the track object of the currently selected track.
 
-`get_selected_scene_index()`\
+### `get_selected_scene_index()`
 Returns an integer containing the number of the scene selected in Live's UI (zero-indexed)
 
-`get_track_by_name(search_name)`\
+### `get_track_by_name(search_name)`
 Pass a string and get back the first track in the set with that name. Returns `False` if no track with that name exists.
 
-`push_msg(message)`\
+### `push_msg(message)`
 Pass a string to display a message on a connected Push 1 or Push 2 in Live mode. (This just calls the native Clyph X action `PUSH MSG`). _Push 2 on Ableton 12+ must be using the legacy control surface script)._
