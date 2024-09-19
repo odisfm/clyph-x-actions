@@ -12,7 +12,6 @@ class clip_halve(UserActionsBase):
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
         self.logging_level = 'critical'
-        self.audio_clips_listeners = []
         self.midi_clips_listeners = []
 
     def get_selected_scene_index(self):
