@@ -100,10 +100,10 @@ class safe_launch(UserActionsBase):
                 started = True
             if started == False:
                 continue
-            if track.name == last_track:
-                break
             if track.clip_slots[scene_index].has_clip:
                 scene_has_clip = True
+                break
+            if track.name == last_track:
                 break
 
         if not scene_has_clip:
