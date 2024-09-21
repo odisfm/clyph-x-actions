@@ -2,6 +2,6 @@
 
 #### A selection of my custom ClyphX Pro user actions for Ableton Live
 
-See them in action(!) at [twitch.tv/odisfm](https://twitch.tv/odisfm) <sup>(coming soon!)</sup>
+See them in action(!) at [twitch.tv/odisfm](https://twitch.tv/odisfm)
 
-Feel free to use [my template](https://github.com/odisfm/clyph-x-actions/tree/main/template) to code your own actions. :)
+Feel free to use [my template](https://github.com/odisfm/clyph-x-actions/tree/main/template) to code your own actions :)
