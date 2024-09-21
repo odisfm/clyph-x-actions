@@ -18,7 +18,7 @@ The default value can be changed by setting the variable at the top of __clip_ha
 
 ## `DEFAULT_CLIP_LENGTH_BARS = 8`
 
-_Note that calling this action on a clip shorter than this value will still result in an 8 bar clip, meaning on a 4 bar clip you will have 4 bars of silence at the end._
+_Note that calling `RESET` on a clip shorter than this value will still result in an 8 bar clip, meaning on a 4 bar clip you will have 4 bars of silence at the end._
 
 ### <sup>†</sup> calling during recording
 
