@@ -14,9 +14,9 @@ Applies to the playing (or recording), clip on the targeted track. Applies to th
 
 The Live API does not provide a practical way to determine the original length of a recorded clip. Calling `USER_CLIP HALVE RESET` will set the clip's Loop Start to 1.1.1 and the Loop End to a default value of 9.1.1 (8 bars long).
 
-The default value can be changed by setting the variable at the top of the file:
+The default value can be changed by setting the variable at the top of __clip_halve.py__:
 
-`DEFAULT_CLIP_LENGTH_BARS = 8`
+## `DEFAULT_CLIP_LENGTH_BARS = 8`
 
 _Note that calling this action on a clip shorter than this value will still result in an 8 bar clip, meaning on a 4 bar clip you will have 4 bars of silence at the end._
 
