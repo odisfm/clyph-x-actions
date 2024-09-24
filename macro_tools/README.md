@@ -16,7 +16,7 @@ Selects and recalls the previous or next variation, relative to the one currentl
 
 ### `USER_DEV MACRANDOM`
 
-Calls the native Live macro randomization feature.
+Calls Live's native macro randomization feature (the little 'Rand' button in a rack's title bar). 
 
 ClyphX includes a native action `DEV RND`, which will randomise the parameters of any device. However, it does not respect the rack feature 'Exclude Macro from Randomization' (available when right-clicking a macro knob). This action does.
 #
