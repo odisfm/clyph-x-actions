@@ -32,10 +32,10 @@ __*This will happen according to your set's global quantization value, meaning i
 
 Using `USER_CLIP HALVE >` in the second half of the recording _on an audio clip or __new__ MIDI clip_ will result in the action triggering a short time after the clip starts playing back.
 
-The length of this delay is the Live Clip Update Rate + ~200ms <sup>3</sup>, meaning you will hear the first half of your clip for this amount of time before the second half starts playing. This is particularly noticeable if the first and second halves of the clip start on different pitches. The clip will, however, remain in time. A Clip Update Rate of 1/16 or 1/32 is recommended for this reason.
+The length of this delay is the Live Clip Update Rate + ~200ms <sup>see 3</sup>, meaning you will hear the first half of your clip for this amount of time before the second half starts playing. This is particularly noticeable if the first and second halves of the clip start on different pitches. The clip will, however, remain in time. A Clip Update Rate of 1/16 or 1/32 is recommended for this reason.
 
 <sup>1</sup> Often, this retriggering will mean the clip actually _doesn't_ need halving, but the action will determine that automatically. <sup>see 2</sup>
 
 <sup>2</sup> When triggering a fixed-length record on a MIDI track via Ableton Push, Live pre-creates a blank MIDI clip of your selected length and starts overdubbing it. This means the retriggering behaviour does not apply, and the action happens instantly. It also means that calling `USER_CLIP HALVE >` in the first half of recording may produce undesired effects if a note is currently being held.
 
-<sup>3</sup> If the callback is not working, or working unreliably, try increasing `CALLBACK_WAIT_TIME` near the top of the file. Works in increments of 100 milliseconds.
+<sup>3</sup> If the callback is not working, or working unreliably, try increasing `CALLBACK_WAIT_TIME` near the top of the file. Deafult is 200ms, works in increments of 100 milliseconds.
