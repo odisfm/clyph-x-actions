@@ -3,6 +3,8 @@
 
 from ClyphX_Pro.clyphx_pro.UserActionsBase import UserActionsBase
 
+EXPORT_MATCH_TRACK_COLOUR = True
+
 class looper(UserActionsBase):
 
     ### boilerplate
@@ -119,5 +121,44 @@ class looper(UserActionsBase):
                 elif args[1] in ['on', 'true', '1']:
                     looper.overdub_after_record = True
                 elif args[1] in ['off', 'false', '0']:
-                    looper_device.overdub_after_record = False
                     looper.overdub_after_record = False
+
+            elif args[0] == 'export':
+                export_args = args_original.split(' ')
+                self.log(args_original)
+                self.log(export_args)
+                destination_slot = export_args[-1]
+                self.log(destination_slot)
+                if export_args[1] == 'sel':
+                    destination_track = self.get_selected_track()
+                elif export_args[1] == 'self':
+                    destination_track = looper.canonical_parent
+                else:
+                    destination_track = args_original.split('"')[1]
+                    destination_track = self.get_track_by_name(destination_track)
+
+                if destination_track == False:
+                    message = f'no track by that name'
+                    self.shout(message)
+                    return
+
+                destination_index = None
+
+                if destination_slot == 'sel':
+                    destination_index = self.get_selected_scene_index()
+                else:
+                    try:
+                        destination_index = int(destination_slot)
+                        destination_index -= 1
+                    except:
+                        message = f'Must specify either SEL or an integer for export destination slot'
+                        self.shout(message)
+                        return
+
+                destination_slot_object = destination_track.clip_slots[destination_index]
+
+                looper.export_to_clip_slot(destination_slot_object)
+
+                if EXPORT_MATCH_TRACK_COLOUR:
+                    exported_clip = destination_slot_object.clip
+                    exported_clip.color_index = destination_track.color_index
