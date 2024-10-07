@@ -52,35 +52,35 @@ class looper(UserActionsBase):
 
     def looper(self, action_def, args):
         target = action_def["track"]
-        looper_device = None
+        looper = None
         device_list = list(target.devices)
         for device in device_list:
             if device.class_name == 'Looper':
-                looper_device = device
+                looper = device
                 break
-        if looper_device is None:
+        if looper == None:
             message = f'No looper device on track {target.name}!'
             self.shout(message)
             return
 
         if args == 'record':
-            looper_device.record()
+            looper.record()
         elif args == 'clear':
-            looper_device.clear()
+            looper.clear()
         elif args == 'doublespeed':
-            looper_device.double_speed()
+            looper.double_speed()
         elif args == 'halfspeed':
-            looper_device.half_speed()
+            looper.half_speed()
         elif args == 'halflength':
-            looper_device.half_length()
+            looper.half_length()
         elif args == 'overdub':
-            looper_device.overdub()
+            looper.overdub()
         elif args == 'play':
-            looper_device.play()
+            looper.play()
         elif args == 'stop':
-            looper_device.stop()
+            looper.stop()
         elif args == 'undo':
-            looper_device.undo()
+            looper.undo()
         else:
             args_original = args
             args = args.split(' ')
@@ -111,12 +111,13 @@ class looper(UserActionsBase):
                     self.log(message, critical=True)
                     return
 
-                looper_device.record_length_index = record_length
+                looper.record_length_index = record_length
 
             elif args[0] == 'dubafter':
                 if len(args) == 1:
-                    looper_device.overdub_after_record = not looper_device.overdub_after_record
+                    looper.overdub_after_record = not looper.overdub_after_record
                 elif args[1] in ['on', 'true', '1']:
-                    looper_device.overdub_after_record = True
+                    looper.overdub_after_record = True
                 elif args[1] in ['off', 'false', '0']:
                     looper_device.overdub_after_record = False
+                    looper.overdub_after_record = False
