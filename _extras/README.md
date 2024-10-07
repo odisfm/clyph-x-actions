@@ -10,4 +10,4 @@ I was provided with an alternative version of the OSC server file which stops th
 #### usage
 Download __OSCserver.py__ and replace the original __OSCserver.pyc__ file with it. Note the change of file extension from __.pyc__ to __.py__. 
 
-The location of the original is `<path to Live remote scripts folder>/ClyphX_Pro/clyphx_pro/osc/OSCserver.py`
+The location of the original is `<path to Live remote scripts folder>/ClyphX_Pro/clyphx_pro/osc/OSCserver.pyc`
