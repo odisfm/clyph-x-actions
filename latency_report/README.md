@@ -12,6 +12,7 @@ vocals | catch peaks (inside dynamics rack) [Limiter] | 256smpl | 5.3ms
 MAIN/MASTER | fuck my shit up (inside analog warmth) [Erosion] | 240smpl | 5.0ms
 MAIN/MASTER | Vinyl Distortion (inside analog warmth) [Vinyl Distortion] | 144smpl | 3.0ms
 guitar | Gate [Gate] | 72smpl | 1.5ms
+RETURN C-big verb | Gate (inside Audio Effect Rack) [Gate] | 72smpl | 1.5ms
 strings | waooow [Corpus] | 64smpl | 1.3ms
 drums | Redux (inside Tom Mid) [Redux] | 64smpl | 1.3ms
 bass | lo cut [EQ Eight] | 16smpl | 0.3ms
