@@ -70,6 +70,8 @@ class auto_metronome(UserActionsBase):
         self.assign_track(KEY_TRACK)
         if ONLY_TURN_ON and ONLY_TURN_OFF:
             self.log(f'"ONLY_TURN_OFF = True and ONLY_TURN_ON = True" are incompatible! Disabling both', critical=True)
+            ONLY_TURN_OFF = False
+            ONLY_TURN_ON = False
 
     def assign_track(self, track_name):
         if track_name == None:
