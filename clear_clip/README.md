@@ -24,4 +24,4 @@ MY_BUTTON RELEASED_IMMEDIATELY = USER_CLIP(SEL) CLEARCLIPPROMPT
 MY_BUTTON PRESSED_DELAYED = USER_CLIP(SEL) CLEARCLIP
 ```
 
-† _only if using Push 2 with legacy control surface script, I believe it's not possible with Push 3. Push 1 and 2 must both be in 'Live' mode (not 'User' mode)_
+† _Push 2 on Live 12+ requires legacy control surface script. I believe it's not possible with Push 3. Push 1 and 2 must both be in 'Live' mode (not 'User' mode)_
