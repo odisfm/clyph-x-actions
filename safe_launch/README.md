@@ -5,7 +5,8 @@ Launches a scene, only if it isn't empty. Shouts at you<sup>1</sup> if you try t
 ## usage
 `SAFELAUNCH <scene number>`\
 `SAFELAUNCH SEL` launch the selected scene\
-`SAFELAUNCH NEXT` launch the scene below the selected scene
+`SAFELAUNCH NEXT` launch the scene below the selected scene\
+`SAFELAUNCH PREV` launch the scene above the selected scene
 
 ### checking within a range of tracks
 

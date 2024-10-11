@@ -66,6 +66,8 @@ class safe_launch(UserActionsBase):
             return
         if arg_scene == 'next':
             scene_index = self.get_selected_scene_index() + 1
+        elif arg_scene == 'prev':
+            scene_index = self.get_selected_scene_index() - 1
         elif arg_scene == 'sel':
             scene_index = self.get_selected_scene_index()
         else:
