@@ -4,4 +4,4 @@
 
 See them in action(!) at [twitch.tv/odisfm](https://twitch.tv/odisfm)
 
-Feel free to use [my template](https://github.com/odisfm/clyph-x-actions/tree/main/template) to code your own actions :)
+Feel free to use [my template](https://github.com/odisfm/clyph-x-actions/tree/main/_template) to code your own actions :)
