@@ -14,6 +14,9 @@ Set this to `False` to only enable the action when you explicitly call it (see b
 #### `ONLY_TURN_OFF = False`
 Set this to `True` and the metronome will turn off when the key track starts playing, but will __not__ turn back on when the track stops.
 
+#### `ONLY_TURN_ON = False`
+Inverse of the above.
+
 ### actions
 #### `AUTOMETRO` `ON` or `OFF`
 You can temporarily disable the action until you turn it back on again. Calling just `AUTOMETRO` with no arguments will toggle the status. 

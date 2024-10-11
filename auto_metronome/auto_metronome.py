@@ -9,6 +9,7 @@ KEY_TRACK = None
 
 ON_AT_LOAD = True
 ONLY_TURN_OFF = False
+ONLY_TURN_ON = False
 
 class auto_metronome(UserActionsBase):
 
@@ -67,6 +68,8 @@ class auto_metronome(UserActionsBase):
             self._song.remove_current_song_time_listener(self.set_load_wait)
         self.on_status = ON_AT_LOAD
         self.assign_track(KEY_TRACK)
+        if ONLY_TURN_ON and ONLY_TURN_OFF:
+            self.log(f'"ONLY_TURN_OFF = True and ONLY_TURN_ON = True" are incompatible! Disabling both', critical=True)
 
     def assign_track(self, track_name):
         if track_name == None:
@@ -107,6 +110,8 @@ class auto_metronome(UserActionsBase):
         if self.on_status is False:
             return
         if self.key_track.playing_slot_index >= 0:
+            if ONLY_TURN_ON:
+                return
             self.log('key track is playing')
             self.cxp_action('WAIT 1; METRO OFF')
         else:
