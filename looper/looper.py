@@ -3,7 +3,7 @@
 
 from ClyphX_Pro.clyphx_pro.UserActionsBase import UserActionsBase
 
-EXPORT_MATCH_TRACK_COLOUR = True
+EXPORT_CLIP_COLOUR = 'destination'  # valid values are 'destination', 'source', or None
 
 class looper(UserActionsBase):
 
@@ -159,6 +159,8 @@ class looper(UserActionsBase):
 
                 looper.export_to_clip_slot(destination_slot_object)
 
-                if EXPORT_MATCH_TRACK_COLOUR:
-                    exported_clip = destination_slot_object.clip
+                exported_clip = destination_slot_object.clip
+                if EXPORT_CLIP_COLOUR == 'destination':
                     exported_clip.color_index = destination_track.color_index
+                elif EXPORT_CLIP_COLOUR == 'source':
+                    exported_clip.color_index = looper.canonical_parent.color_index
