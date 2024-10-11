@@ -1,6 +1,6 @@
 # lpr
 
-Track action that exposes functions for the Looper device that were added to the Live API in version 12.0.5. Targets the first Looper device on the specified track.
+Track action that exposes functions for the Looper device that were added to the Live API in version 12.0.5. __Targets the first Looper device on the specified track.__
 
 Usage: `LPR <specific function>`
 
