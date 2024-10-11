@@ -16,7 +16,7 @@ class auto_metronome(UserActionsBase):
     ### boilerplate
 
     def log(self, message, critical = False):
-        if LOGGING_LEVEL is not 'all' and not critical:
+        if LOGGING_LEVEL != 'all' and not critical:
             return
         if critical:
             message = 'CRITICAL: ' + message
@@ -61,17 +61,19 @@ class auto_metronome(UserActionsBase):
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
-        self._song.add_current_song_time_listener(self.set_load_wait)
+        self._song.add_is_playing_listener(self.set_load_wait)
 
     def set_load_wait(self):
-        if self._song.current_song_time_has_listener:
-            self._song.remove_current_song_time_listener(self.set_load_wait)
+        if self._song.is_playing_has_listener:
+            self._song.remove_is_playing_listener(self.set_load_wait)
         self.on_status = ON_AT_LOAD
-        self.assign_track(KEY_TRACK)
-        if ONLY_TURN_ON and ONLY_TURN_OFF:
+        self.ONLY_TURN_ON = ONLY_TURN_ON
+        self.ONLY_TURN_OFF = ONLY_TURN_OFF
+        if self.ONLY_TURN_ON == True and self.ONLY_TURN_OFF == True:
             self.log(f'"ONLY_TURN_OFF = True and ONLY_TURN_ON = True" are incompatible! Disabling both', critical=True)
-            ONLY_TURN_OFF = False
-            ONLY_TURN_ON = False
+            self.ONLY_TURN_ON = False
+            self.ONLY_TURN_OFF = False
+        self.assign_track(KEY_TRACK)
 
     def assign_track(self, track_name):
         if track_name == None:
@@ -112,12 +114,12 @@ class auto_metronome(UserActionsBase):
         if self.on_status is False:
             return
         if self.key_track.playing_slot_index >= 0:
-            if ONLY_TURN_ON:
+            if self.ONLY_TURN_ON:
                 return
             self.log('key track is playing')
             self.cxp_action('WAIT 1; METRO OFF')
         else:
-            if ONLY_TURN_OFF:
+            if self.ONLY_TURN_OFF:
                 return
             self.log('key track is not playing')
             self.cxp_action('WAIT 1; METRO ON')
