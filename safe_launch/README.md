@@ -11,7 +11,7 @@ Launches a scene, only if it isn't empty. Shouts at you<sup>1</sup> if you try t
 
 Optionally, you can specify a range of tracks, and only those tracks will be considered when determining if a scene is empty: at least one clip must be present on a track within this range for the scene to launch.
 
-You can specify this range two ways:
+You can specify this range in two ways:
 
 #### globally in safe_launch.py
 
