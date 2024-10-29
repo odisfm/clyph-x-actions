@@ -26,5 +26,5 @@ with open(path_to_file, 'r') as file:
 def get_track_colour(track):
     return colour_list[track.color_index]
 
-selected_track_colour = self._song.view.selected_track
+selected_track_colour = get_track_colour(self._song.view.selected_track)
 ```
