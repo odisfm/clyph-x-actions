@@ -11,3 +11,20 @@ I was provided with an alternative version of the OSC server file which stops th
 Download __OSCserver.py__ and replace the original __OSCserver.pyc__ file with it. Note the change of file extension from __.pyc__ to __.py__. 
 
 The location of the original is `<path to Live remote scripts folder>/ClyphX_Pro/clyphx_pro/osc/OSCserver.pyc`
+
+### ableton hex colours
+JSON-formatted list of the colours available for tracks and clips in Live, from left-to-right, top-to-bottom. I use this to update the colours of my TouchOSC layout based on the selected track.
+
+#### usage
+```python
+import json
+
+path_to_file = '~/clyphx/ableton_hex_colours.json' # relative paths will not work in a ClyphX context
+with open(path_to_file, 'r') as file:
+    colour_list = json.load(file)['colours']
+
+def get_track_colour(track):
+    return colour_list[track.color_index]
+
+selected_track_colour = self._song.view.selected_track
+```
