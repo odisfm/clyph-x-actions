@@ -30,4 +30,4 @@ sets the record length, where `<LENGTH>` is any number of bars available in the 
 * `LPR DUBAFTER <MODE>`\
 where `<MODE>` is `ON`, `OFF`, or omitted to toggle the state
 * `LPR EXPORT <TRACK> <SLOT NUMBER>`\
-where `<TRACK>` is `SEL` for the selected track, `SELF` for the track containing the Looper, or any track name in double-quotes. `<SLOT NUMBER>` may be any valid scene number or `SEL` for the selected scene. The variable `EXPORT_CLIP_COLOUR` at the top of __looper.py__ determines whether the new clip's colour will be set to that of the destination track or the source track.
+where `<TRACK>` is `SEL` for the selected track, `SELF` for the track containing the Looper, or any track name in double-quotes. `<SLOT NUMBER>` may be any valid scene number or `SEL` for the selected scene. The variable `EXPORT_CLIP_COLOUR` at the top of __looper.py__ determines whether the new clip's colour will be set to that of the destination track or the source track (default is destination).
