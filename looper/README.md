@@ -4,7 +4,7 @@ Track action that exposes functions for the Looper device that were added to the
 
 Usage: `LPR <specific function>`
 
-The functions available are listed in [the Live Object Model documentation](https://docs.cycling74.com/max8/vignettes/live_object_model#live_obj_anchor_LooperDevice) under LooperDevice.
+The functions available are listed in [the Live Object Model documentation](https://docs.cycling74.com/apiref/lom/looperdevice/) under LooperDevice.
 
 All exposed functions are available for use in ClyphX Pro, with some caveats:
 
