@@ -10,7 +10,7 @@ Creates an audio track called `my audio track` to the right of the currently sel
 
 `ADDMIDIN "my midi track" 3`
 
-Creates an MIDI track called `my audio track` as track number 3.
+Creates a MIDI track called `my MIDI track` as track number 3.
 
 `ADDMIDIN "my midi track" <` or `>`
 
