@@ -1,6 +1,6 @@
 # clyph-x-actions
 
-**A selection of my custom ClyphX Pro user actions for Ableton Live**
+**A selection of my custom [ClyphX Pro](https://isotonikstudios.com/product/clyphx-pro/) user actions for Ableton Live**
 
 See them in action(!) at [twitch.tv/odisfm](https://twitch.tv/odisfm)
 
